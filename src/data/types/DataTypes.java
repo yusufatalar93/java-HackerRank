@@ -1,10 +1,13 @@
-package src.DataTypes;
+package src.data.types;
+
 
 import java.util.Scanner;
 
-public class DataTypes2 {
+//Java has 8 primitive data types; char, boolean, byte, short, int, long, float, and double.
+public class DataTypes {
 
-  public static void main(String[] args) {
+  public static void main(String[] argh) {
+
     Scanner sc = new Scanner(System.in);
     int t = sc.nextInt();
 
@@ -12,23 +15,30 @@ public class DataTypes2 {
 
       try {
         long x = sc.nextLong();
+        long limitNumber;
         System.out.println(x + " can be fitted in:");
-
-        if (x >= Byte.MIN_VALUE && x <= Byte.MAX_VALUE) {
+        limitNumber = 128;
+        if (x >= -limitNumber && x < limitNumber) {
           System.out.println("* byte");
         }
-        if (x >= Short.MIN_VALUE && x <= Short.MAX_VALUE) {
+        limitNumber = (long) Math.pow(2, 16);
+        if (x >= -limitNumber && x < limitNumber) {
           System.out.println("* short");
         }
-        if (x >= Integer.MIN_VALUE && x <= Integer.MAX_VALUE) {
+        limitNumber = (long) Math.pow(2, 32);
+        if (x >= -limitNumber && x < limitNumber) {
           System.out.println("* integer");
         }
         System.out.println("* long");
       } catch (Exception e) {
         System.out.println(sc.next() + " can't be fitted anywhere.");
       }
-    }
 
+    }
   }
+
 }
+
+
+
 
