@@ -11,8 +11,6 @@ public class CurrencyFormat {
     Scanner scanner = new Scanner(System.in);
     double payment = scanner.nextDouble();
     scanner.close();
-    payment = Math.round(payment * 100) / 100.0;
-
     String us = NumberFormat.getCurrencyInstance(Locale.US).format(payment);
     String china = NumberFormat.getCurrencyInstance(Locale.CHINA).format(payment);
     String france = NumberFormat.getCurrencyInstance(Locale.FRANCE).format(payment);
